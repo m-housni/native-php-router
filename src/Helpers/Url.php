@@ -5,8 +5,9 @@ namespace FlexRouter\Helpers;
 /**
  * the Url trait
  */
-trait Url
+trait Url 
 {
+    // a trait in php is 
 
     /**
      * Extract dynamic parameter names from route if it is dynamic.
@@ -37,8 +38,8 @@ trait Url
         /** get params */
         $params = $this->getParams($route);
 
-        list($newRoute, $routeLength, $lastSlashPos) = [$route, strlen($route), strrpos($route, '/')];
-        $newRoute .= ($routeLength - 1 === $lastSlashPos) ? '?' : '/?';
+        list($newRoute, $routeLength, $lastSlashPos) = [$route, strlen($route), strrpos($route, '/')]; // get route length and last slash position
+        $newRoute .= ($routeLength - 1 === $lastSlashPos) ? '?' : '/?'; // add optional slash at the end of route
 
         $regex = @preg_replace(array_keys($params), array_values($params), $newRoute);
         $regex = @str_replace('/', '\/', $regex);

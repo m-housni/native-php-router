@@ -21,4 +21,6 @@ $router->get('/:username/profile', function($routeInfo) {
     // respond here.
 });
 
+.htaccess is a 
+
 ```
